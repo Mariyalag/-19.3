@@ -1,0 +1,20 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}Список игр{% endblock %}
+
+{% block content %}
+    <h1>Список игр</h1>
+    <div class="game-list">
+        {% for game in games %}
+            <div class="game-item">
+                <h2>{{ game.title }}</h2>
+                <p>{{ game.description }}</p>
+                <p>Стоимость: {{ game.cost }}$</p>
+                <button class="btn game-btn">Купить</button>
+            </div>
+        {% empty %}
+            <p>Нет доступных игр.</p>
+        {% endfor %}
+    </div>
+    <a class="btn-back" href="{% url 'home' %}">Назад на главную</a>
+{% endblock %}

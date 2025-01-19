@@ -1,0 +1,14 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}Отзывы клиентов{% endblock %}
+
+{% block content %}
+    <h1>Отзывы клиентов</h1>
+    <ul class="list-group">
+        {% for testimonial in testimonials %}
+            <li class="list-group-item">{{ testimonial|safe }}</li>
+        {% endfor %}
+    </ul>
+    <a class="btn-back" href="{% url 'home' %}">Назад на главную</a>
+{% endblock %}
+

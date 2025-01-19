@@ -1,0 +1,19 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}МАК-карты{% endblock %}
+
+{% block content %}
+    <h1>Метафорические ассоциативные карты (МАК)</h1>
+    <h2><u>Прошлое</u></h2>
+    <p><i>{{ cards_info.past }}</i></p>
+
+    <h2><u>Настоящее</u></h2>
+    <p><i>{{ cards_info.present }}</i></p>
+
+    <h2><u>Будущее</u></h2>
+    <p><i>{{ cards_info.future }}</i></p>
+
+    <a class="btn-back" href="{% url 'home' %}">Назад на главную</a>
+{% endblock %}
+
+

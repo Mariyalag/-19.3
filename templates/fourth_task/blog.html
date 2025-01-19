@@ -1,0 +1,15 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}Блог{% endblock %}
+
+{% block content %}
+    <h1>Блог</h1>
+    {% for article in articles %}
+        <article>
+            <h2>{{ article.title }}</h2>
+            <div>{{ article.content|safe }}</div>
+        </article>
+    {% endfor %}
+    <a class="btn-back" href="{% url 'home' %}">Назад на главную</a>
+{% endblock %}
+

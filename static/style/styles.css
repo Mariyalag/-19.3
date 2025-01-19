@@ -1,0 +1,85 @@
+body {
+    background-color: silver;
+    font-family: Arial, sans-serif;
+}
+
+.nav {
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #8c6d3d;
+}
+
+.nav-link {
+    color: #8c6d3d;
+}
+
+.nav-link:hover {
+    color: #6b4f2b;
+}
+
+.btn-primary {
+    background-color: #8c6d3d;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #8c6d3d;
+}
+
+.btn-back {
+    background-color: #8c6d3d;
+    color: black;
+    border: 2px solid #8c6d3d;
+    padding: 10px 20px;
+    text-decoration: none;
+    position: relative;
+    top: 20px;
+}
+
+
+.btn-back:hover {
+    color: white;
+    background-color: #6b4f2b;
+    text-decoration: none;
+}
+
+.mak-cards-description {
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.game-list {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.game-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    width: calc(25% - 10px);
+    box-sizing: border-box;
+}
+
+.game-btn {
+    background-color: #8c6d3d;
+    border: 2px solid #8c6d3d;
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+}
+
+.game-btn:hover {
+    color: white;
+    background-color: #6b4f2b;
+    text-decoration: none;
+}
+
+
