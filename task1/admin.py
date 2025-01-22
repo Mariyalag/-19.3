@@ -3,6 +3,7 @@ from django.contrib import admin
 # Register your models here.
 from django.contrib import admin
 from .models import Game, Buyer
+from .models import News
 
 
 @admin.register(Game)
@@ -37,6 +38,9 @@ class BuyerAdmin(admin.ModelAdmin):
     # Доступным только для чтения поле balance
     readonly_fields = ('balance',)
 
+
+admin.site.register(News)
+
 # @admin.register(News)
 # class NewsAdmin(admin.ModelAdmin):
 #     list_display = ('title', 'category', 'created_at', 'is_published') #поля для отображения
@@ -56,3 +60,66 @@ class BuyerAdmin(admin.ModelAdmin):
 #     )
 #
 #     readonly_fields = ('created_at', 'updated_at') # только для чтения полей
+
+
+# { % extends
+# 'task1/menu.html' %}
+# { % block
+# pagename %} < h1 > Игры < / h1 > { % endblock %}
+# { % block
+# menu %}{{block.super}}
+# { % endblock %}
+# { % block
+# content %}
+# < hr >
+# { %
+# for new in news %}
+# < h2 > {{new.title}} < / h2 >
+# < br >
+# {{new.content}}
+# < br >
+# < small
+# style = "float: right; margin-right: 20px;" > {{new.date}} < / small >
+# < hr >
+# { % endfor %}
+#
+# < div
+#
+#
+# class ="pagination" >
+#
+# < span
+#
+#
+# class ="step-links" >
+#
+#
+# { % if news.has_previous %}
+# < a
+# href = "?page=1" > & laquo;
+# Первая < / a >
+# < a
+# href = "?page={{ news.previous_page_number }}" > Предыдущая < / a >
+# { % endif %}
+#
+# < span
+#
+#
+# class ="current" >
+#
+#
+# Страница
+# {{news.number}}
+# из
+# {{news.paginator.num_pages}}.
+# < / span >
+#
+# { % if news.has_next %}
+# < a
+# href = "?page={{ news.next_page_number }}" > Следующая < / a >
+# < a
+# href = "?page={{ news.paginator.num_pages }}" > Последняя & raquo; < / a >
+# { % endif %}
+# < / span >
+# < / div >
+# { % endblock %}

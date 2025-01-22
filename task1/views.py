@@ -8,9 +8,8 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from .forms import UserRegister
 from .models import Buyer, Game
-
-
-
+from django.core.paginator import Paginator
+from .models import News
 
 
 def home(request):
@@ -154,3 +153,10 @@ def sign_up_by_html(request):
 def game_list(request):
     games = Game.objects.all()
     return render(request, 'fourth_task/game_list.html', {'games': games})
+
+def news(request):
+    news_list = News.objects.all().order_by('-date')
+    paginator = Paginator(news_list, 3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'sixth_task/news.html', {'news': page_obj})

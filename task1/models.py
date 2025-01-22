@@ -24,5 +24,11 @@ class Game(models.Model):
     age_limited = models.BooleanField(default=False)
     buyers = models.ManyToManyField(Buyer, related_name='games')
 
-    def __str__(self):
-        return self.title
+class News(models.Model):
+    objects = None
+    title = models.CharField(max_length=100)
+    content = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+
+def __str__(self):
+    return self.title
